@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export const fetchAppointmentsData = async () => {
-  const response = await axios.get('http://localhost:5139/api/Appointment');
+  const response = await axios.get('https://turnosappbackend.azurewebsites.net/api/Appointment');
   return response.data;
 };
 
