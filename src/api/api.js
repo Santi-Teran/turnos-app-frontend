@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_URL = 'http://localhost:5139/api';
+const API_URL = 'https://turnosappbackend.azurewebsites.net/api';
 
 export const fetchServices = async (token) => {
   try {
