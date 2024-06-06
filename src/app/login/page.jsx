@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://turnosappbackend.azurewebsites.net/api/login', {
+      const response = await axios.post('https://turnosappbackend.azurewebsites.net/login', {
         username,
         password,
       });
