@@ -19,6 +19,7 @@ const Form = () => {
 
   const [services, setServices] = useState([]);
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchServicesData = async () => {
@@ -27,6 +28,8 @@ const Form = () => {
         setServices(servicesData);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchServicesData();
@@ -105,9 +108,13 @@ const Form = () => {
               className="py-2 px-4 rounded-lg text-black w-full"
             >
               <option value="">Selecciona un servicio</option>
-              {activeServices.map((service) => (
-                <option key={service.id} value={service.id}>{service.name} - ${service.price}</option>
-              ))}
+              { loading ? (
+                <option>Cargando servicios...</option>
+              ) : (
+                activeServices.map((service) => (
+                  <option key={service.id} value={service.id}>{service.name} - ${service.price}</option>
+                ))
+              )}
             </select>
             {errors.serviceId && <span className="text-red-500">{errors.serviceId}</span>}
           </div>
