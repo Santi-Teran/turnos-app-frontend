@@ -8,9 +8,15 @@ export default function Home() {
   return (
     <div>
       <NavBar />
+      <div id="inicio">
       <Landing />
+      </div>
+      <div id="servicios">
       <Services />
+      </div>
+      <div id="nosotros">
       <Nosotros />
+      </div>
       <Footer />
     </div>
   );

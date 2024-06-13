@@ -7,14 +7,14 @@ import landing from '../../public/mareatech.png'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='mb-14 md:mb-0'>
       <div className='bg-dark-blue flex flex-col gap-10 justify-center items-center py-12'>
         <div className='flex text-white gap-10'>
           <FiInstagram />
           <FiFacebook />
           <FiTwitter />
         </div>
-        <Image src={landing} alt='' className='w-1/6'/>
+        <Image src={landing} alt='' className='w-1/2 md:w-1/5'/>
         <Link href={'/turnos'} className='bg-orange text-black font-bold py-2 px-6 rounded-lg shadow shadow-black'>Agendar Turno</Link>
       </div>
       <div className='flex justify-between p-4 bg-white text-dark-blue flex-col items-center md:flex-row'>
