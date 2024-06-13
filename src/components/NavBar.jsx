@@ -7,6 +7,7 @@ import { FaScissors } from 'react-icons/fa6';
 import { AiFillInfoCircle } from "react-icons/ai";
 
 const NavBar = () => {
+  
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -18,7 +19,7 @@ const NavBar = () => {
     <div className='w-full fixed bg-dark-blue text-white shadow-md shadow-black'>
       <div className='hidden md:flex justify-between items-center p-4'>
         <div className='flex items-center gap-12'>
-          <Link href='/' className='md:w-1/6 w-1/2'>
+          <Link href='/' className='w-40'>
             <Image src={logo} alt='Marea Tech'/>
           </Link>
           <ul className='flex gap-12'>

@@ -6,6 +6,12 @@ import Image from 'next/image';
 import landing from '../../public/mareatech.png'
 
 const Footer = () => {
+
+  const phoneNumber = '5492236343568'; // Reemplaza con tu número de teléfono en formato internacional
+  const message = 'Hola, me gustaría obtener más información.'; // Reemplaza con tu mensaje predefinido
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
   return (
     <div className='mb-14 md:mb-0'>
       <div className='bg-dark-blue flex flex-col gap-10 justify-center items-center py-12'>
@@ -23,9 +29,9 @@ const Footer = () => {
           <p className="text-sm lg:text-base">2024 Marea Tech.</p>
         </div>
         <div className='flex text-lg lg:text-xl items-center gap-x-3'>
-          <Link href={''} target='_BLANK'><FaWhatsapp /></Link>
-          <Link href={''} target='_BLANK'><FaLinkedinIn /></Link>
-          <Link href={''} target='_BLANK'><FaInstagram /></Link>
+          <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" ><FaWhatsapp /></Link>
+          <Link href={'https://www.linkedin.com/company/marea-tech/'} target='_BLANK'><FaLinkedinIn /></Link>
+          <Link href={'https://www.instagram.com/marea__tech/'} target='_BLANK'><FaInstagram /></Link>
         </div>
       </div>
     </div>
