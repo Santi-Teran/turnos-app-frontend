@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   const handleSubmit = async (event) => {
@@ -22,6 +23,8 @@ const Login = () => {
     } catch (error) {
       console.error('Error during login:', error);
       toast.error('Nombre de usuario o contraseña incorrectos');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -52,7 +55,11 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="w-full bg-dark-blue text-white py-2 rounded hover:scale-105 transition-all">Iniciar sesión</button>
+          { loading ? ( 
+              <button type="submit" className="w-full bg-dark-blue text-white py-2 rounded hover:scale-105 transition-all">Iniciar sesión</button>
+            ) : (
+              <button type="submit" className="w-full bg-dark-blue text-white py-2 rounded hover:scale-105 transition-all">Cargando...</button>
+            )}
         </form>
       </div>
     </div>
